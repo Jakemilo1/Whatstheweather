@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     // ******************************************* City Input and Search History ******************************************* //              
     
-    // Display last search history using a for loop, if else statements and localStorage
+    // Display last search history using a 4 loop, if else statements and localStorage
     var searchedCitiesArray = [];
     
     // On click function for stored cities
@@ -120,17 +120,14 @@ $(document).ready(function(){
                         }
                   }
             });           
-    } 
-    
-    // ******************************************* GET UVI INDEX API CALL ******************************************* //              
-    
-    // Using lat and long with get uvIndex and display on Currentweather DOM
+    }            
+
     function getUVindex(lat,long) {  
                  
-        //Build the URL we need to get the UVI information
+        //URL UVI information
         var queryURL = "https://api.openweathermap.org/data/2.5/onecall?" + "&lat=" + lat + "&lon=" + long + "&appid=" + apiKey;
     
-        // Here we run our AJAX call to the OpenWeatherMap API
+        // AJAX call to the OpenWeatherMap API
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -138,7 +135,9 @@ $(document).ready(function(){
             .then(function(responseUVI) {
                 console.log(responseUVI.current.uvi)
                 var uvIndex = responseUVI.current.uvi;
-                //Print UVIndex
+
+                //UVIndex
+
                 $("#uvIndex").text("UV Index: " + uvIndex);
                 
                 if (uvIndex <= 2.99) {                  
