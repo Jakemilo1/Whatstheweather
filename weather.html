@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Weather App</h1>
+    <div id="searchContainer">
+        <form id="searchForm">
+            <input type="text" class="form-control" id="searchInput" placeholder="Enter a city">
+            <button type="submit" class="btn btn-primary" id="searchBtn">Search</button>
+        </form>
+    </div>
+    <div id="previousSearches">
+        <h2>Search History:</h2>
+        <div id="searchHistory"></div>
+    </div>
+    <div id="weatherContainer">
+        <div id="currentWeather">
+            <h2>Current Weather:</h2>
+            <div class="currentCity"></div>
+            <div class="weatherDetails">
+                <div class="weatherIcon"></div>
+                <div class="humidity"></div>
+                <div class="windSpeed"></div>
+                <div class="temperature"></div>
+                <div id="uvIndex"></div>
+            </div>
+        </div>
+        <div id="forecast">
+            <h2>5-Day Forecast:</h2>
+            <div class="dayForecast" id="1dayForecast"></div>
+            <div class="dayIcon" id="1dayIcon"></div>
+            <div class="dayHumidity" id="1dayHumidity"></div>
+            <div class="dayTemperature" id="1dayTemperature"></div>
+            <!-- Repeat the above divs for the remaining 4 days -->
+        </div>
+    </div>
+</body>
+</html>
